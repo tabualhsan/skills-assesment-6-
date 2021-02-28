@@ -3,15 +3,15 @@ Runtime
 
 1. Runtime for does_string_contain_letter:
 
-
+O(n)
 
 2. Runtime for duplicate_letters:
-
+o(n)^2
 
 
 3. Runtime for duplicate_letters2:
 
-
+o(2n)
 
 Stacks and Queues
 -----------------
@@ -20,7 +20,8 @@ Stacks and Queues
 1. Which would be a better data structure for creating a Stack: a Linked List or 
    a built-in Python list? Explain why, referencing the runtime requirements for
    Stack operations (push, pop, etc).
-
+For a stack it's best to use a linked list data structure the runtime would be constant time because a stack can have items be added to the top of the list and removed from the top 
+and it can shrink and grow as much as needed whereas if you were to use a built-in python list there could be a maximum limit to the array and can lead to a stack overflow.
 
 
 
@@ -30,7 +31,8 @@ Stacks and Queues
    a built-in Python list? Explain why, referencing the runtime requirements for
    Queue methods (enqueue, dequeue, etc).
 
-
+for a queue, the runtime is constant because remove things from the front of the list. it is best to use a python list because order matter the first in is the first out and it is an ordered list.
+and the enqueue determine when an item was add to the queue where as a dequeue determine the next item that was added first to leave, which holds a runtime of 0(1) 
 
 Trees
 -----
@@ -38,13 +40,34 @@ Trees
 1. Using the diagram in the instructions, in what order would a Breadth First
    Search (BFS) algorithm visit each node  until finding burritos (starting at
    food)?
-
+list starts off as fpod
+not food, so add the children [italian,indian, mexican]
+pop italian, not burritos so add his children [lasagna, pizza, indian, mexican]
+pop indian not burritos so add indians children [ lasagna,pizza,tikka masala, saag, mexican]
+pop mexican not burritos, add mexicans children [lasagna,pizza,tikka masala, saag, burritos, tacos, enchiladas]
+pop lasagna not burritos[pizza,tikka masala, saag, burritos, tacos, enchiladas]
+pop pizza not burritos[tikka masala, saag, burritos, tacos, enchiladas]
+pop tikka masala not burritos[saag, burritos, tacos, enchiladas]
+pop saag not burritos[burritos, tacos, enchiladas]
+pop burritos and it is burritos! 
 
 2. Using the diagram in the instructions, In what order would a Depth First 
    Search (DFS) algorithm visit each node until finding Chicago-style (starting
    at food)? 
 
+list starts off as food
+'food' is not Chicago-style, so add foods children [italian,indian, mexican]
+pop italian, not Chicago-style, so add the childer [Indian, mexican, lasagna, pizza]
+pop lasagna, not Chicago-style, so add the children [Indian, mexican, pizza]
+pop pizza, not Chicago-style, so add the children[Indian, mexican, thin crust, Chicago-style, new york style, sicilian]
+pop Chicago-style, Chicago-style is what we needed! 
+
 3. How is a binary search tree different from other trees?
+
+A binary search tree is different because each node has a left and right child and has a rule of arrangement; nodes to the left of a roots have a smaller value  than the root where as nodes to the right of a node have values greater than the value of the root which all in all is best for fast searching. 
+
+
+
 
 
 
