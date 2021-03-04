@@ -48,6 +48,16 @@ class Tree(object):
         """
 
         # TODO: Complete this function
+        new_list =[]
+        tree_nodes =[self.root]
+
+        while tree_nodes:
+            node = tree_nodes.pop(0)
+            if node.data == data:
+                new_list.append(node)
+
+            tree_nodes.extend(node.children)
+        return new_list
 
         pass
 
